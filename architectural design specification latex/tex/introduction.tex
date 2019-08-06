@@ -1,1 +1,7 @@
-Your introduction should describe your product concept in sufficient detail that the architectural design will be easy to follow. The introduction may include information used in the first sections of your SRS for this purpose. At a minimum, ensure that the product concept, scope and key requirements are described.
+Swift Scan is composed of 3 major components: a mobile application, web application, and database system.
+
+The mobile app will contain 3 tabs: profile, scan, and saved. The profile tab will ensure that all user settings are saved and can be synced with the web app. The scan tab will allow users to scan products using the camera and view information about them. If they choose to save the product information, it will be stored in the saved tab. The saved tab lists every product save by the user. These products can be sorted by type of alcohol or any other category. The user can also make collections with products of their choice.
+
+The web app will include a profile tab and saved tab with the same features as the mobile app. The information will be synced from the mobile app so the user can access their products anywhere.
+
+The database system is the driving force of the project. When a user scans a product, the database will be queried for the barcode number. Information such as name, brand, price, ABV, type, country, and category will be returned the user. In addition, the database will store the information of all users and will be monitored by the maintenance team.
