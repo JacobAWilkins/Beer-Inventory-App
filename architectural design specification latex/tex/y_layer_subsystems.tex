@@ -1,38 +1,75 @@
 In this section, the layer is described in some detail in terms of its specific subsystems. Describe each of the layers and its subsystems in a separate chapter/major subsection of this document. The content of each subsystem description should be similar. Include in this section any special considerations and/or trade-offs considered for the approach you have chosen.
 
-\subsection{Subsystem 1}
-This section should be a general description of a particular subsystem for the given layer. For most subsystems, an extract of the architectural block diagram with data flows is useful. This should consist of the subsystem being described and those subsystems with which it communicates.
+Layer Y is mobile application layer. The subsystem layers are barcode reader, public database connector, private database connector and manage inventory. In these subsystem users can scan the barcode number and get the product information from database with respective connectors (public and private). User can get the information of beer on the basis of their type, order, style and price available in database.  Barcode reader is connected to public database through its connectors; and if user enters the barcode number of selected products, then user can get through the information from manage inventory through private database connectors. Public database conn helps to get the product records stored in public database. Private database connectors help in database entry. It promotes to change the records, upgrade, delete the information in brewing database. Manage Inventory allow for information to be managed and stored into the brewery database.
 
-\begin{figure}[h!]
-	\centering
- 	\includegraphics[width=0.60\textwidth]{images/subsystem}
- \caption{Example subsystem description diagram}
-\end{figure}
+5.1(Subsystem 1)
+The subsystem of the Mobile app layer is Barcode reader. This subsystem scans the barcode number and get the product information like type, price, style and date from the database with respective private and public connectors. Barcode reader is connected with public database connector through barcode number. 
+5.1.1(Assumption)
+The subsystem Barcode reader is connected to public database connector through barcode number. It can access the information from the public database. Similarly, when user wants to access the information from the private database then probably, user have to do manually whatever stored in system. They cannot access private information directly and without permission granted.
+5.1.2
+(Responsibilities)
+As our subsystem is barcode reader. It is responsible to scan the beer products through barcode number. It is represention of data of related products. It performs to get the information of beer based on its types, origin, price, style and date. It extracts the information by its barcode number available in database.
+ 5.1.3 (Subsystem Interference)
+ID 	Description 	Inputs 	Outputs 
+#xx 	Barcode reader	 Brewing products	Barcode number 
 
-\subsubsection{Assumptions}
-Any assumptions made in the definition of the subsystem should be listed and described. Pay particular attention to assumptions concerning interfaces and interactions with other layers.
 
-\subsubsection{Responsibilities}
-Each of the responsibilities/features/functions/services of the subsystem as identified in the architectural summary must be expanded to more detailed responsibilities. These responsibilities form the basis for the identification of the finer-grained responsibilities of the layer's internal subsystems. Clearly describe what each subsystem does.
 
-\subsubsection{Subsystem Interfaces}
-Each of the inputs and outputs for the subsystem are defined here. Create a table with an entry for each labelled interface that connects to this subsystem. For each entry, describe any incoming and outgoing data elements will pass through this interface.
+5.2(subsystem 2)
+Another subsystem of mobile app is public database connector. Public database conn helps to get the product records stored in public database. In public connectors, you can get the public information from public database. Like what type of product, it is(brand), its origin, best by date and type. Public database connectors are connected with public database through barcode number; as database send information to public on the basis of its number. Similarly, it is also connected with the private database through selected information. 
 
-\begin {table}[H]
-\caption {Subsystem interfaces} 
-\begin{center}
-    \begin{tabular}{ | p{1cm} | p{6cm} | p{3cm} | p{3cm} |}
-    \hline
-    ID & Description & Inputs & Outputs \\ \hline
-    \#xx & Description of the interface/bus & \pbox{3cm}{input 1 \\ input 2} & \pbox{3cm}{output 1}  \\ \hline
-    \#xx & Description of the interface/bus & \pbox{3cm}{N/A} & \pbox{3cm}{output 1}  \\ \hline
-    \end{tabular}
-\end{center}
-\end{table}
+5.2.1(Assumption)
 
-\subsection{Subsystem 2}
-Repeat for each subsystem
+As public database connector is linked up with private database connector still it cannot modify and edit any records form the mange inventory unless the user provides the approval. It cannot access the information that is managed and stored in brewery database without the permission granted. It’s hard to access the database entry of the product. Therefore, they will do manually.
 
-\subsection{Subsystem 3}
-Repeat for each subsystem
+
+5.2.2
+(Responsibilities)
+Public database connector helps to get the product records stored in public database. In public connectors, you can get the public information from public database. Like what type of product, it is(brand), its origin, best by date and type. In public database connectors, anyone can access database and can get the information regarding the product. No need of permission of Users to search the product on public database. 
+
+5.2.3 (Subsystem Interference)
+ID 	Description 	Inputs 	Outputs 
+#xx 	 Public database connector	Barcode number, Product information	Selected information 
+
+
+5.3(subsystem 3)
+Another Subsystem of mobile app is private database connector. Private database connectors help in database entry. It promotes to change the records, upgrade, delete the information in brewing database. Private database connector is connected with the manage inventory through database entry. It helps to manage records of product and store in brewing database. 
+
+5.3.1(Assumption)
+The subsystem private database connector is connected with the manage inventory. It can only operate the private database. Only the approval people can access the database and can get the information. Therefore, the user will add, change and update the product information into the brewery database manually.
+5.3.2(responsibilities)
+Private database connectors help in database entry. It promotes to change the records, upgrade, delete the information in brewing database. It manages records of product and store in brewing database. It controls the private database and only limited user can access who got approval. 
+
+
+5.3.3 (Subsystem Interference)
+ID 	Description 	Inputs 	Outputs 
+#xx 	Private database connectors	Selected information, database entry	Database entry
+
+
+
+
+5.4 (subsystem 4)
+
+
+Another subsystem of mobile app is Manage Inventory. The system will allow for information to be managed and stored into the brewery database. The user can add, modify and delete information stored in database. Manage inventory is connected with the private database connector through database entry. 
+
+5.4.1(Assumption)
+
+As manage inventory app is connected only with the private database connector. The information available in database can be changed only when User provides the approval.
+ Therefore, a brewery product is not available on the public database when the mobile app scans the barcode of the brewery product, will allow the user to add/input the product information into the brewery database manually and become available for retrieval.
+
+5.4.2 (Responsibilities)
+The subsystem manage inventory allows information to be managed and stored into the database. The user will be able to add, delete, and modify any records that are currently stored and saved on the database. The information of beer products will include name of product, type, its id and best by date.
+
+5.4.3 (Subsystem Interference)
+ID 	Description 	Inputs 	Outputs 
+#xx 	Manage inventory	Database entry	Database entry
+
+
+
+
+
+	
+
+	
 
