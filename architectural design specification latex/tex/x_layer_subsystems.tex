@@ -12,9 +12,9 @@ In the Manage Inventory subsystem of the web app layer, the subsystem will allow
 \end{figure}
 
 \subsubsection{Assumptions}
-Any assumptions made in the definition of the subsystem should be listed and described. Pay particular attention to assumptions concerning interfaces and interactions with other layers.
+Assuming that a brewery product is not available on the public database when the mobile app scans the barcode of the brewery product, then the web portal will allow the user to add/input the product information into the brewery database manually and become available for retrieval.  On the other hand, assuming the need for a product to be updated/modified arises, the web portal will allow the user to select the product from the database to be modified/updated and also will prompt the user which attribute of the product needs to be updated.
 
-
+The Manage Inventory subsytem will interact directly with the central brewery database in the background.  Any record that is added, deleted, or modified will be stored and saved in the database once the user approves it when using the web portal.
 
 \subsubsection{Responsibilities}
 The Manage Inventory subsystem primary responsibility is for the user to interact with the user interface (UI) that'll be accessible through a web browser in order to manage any and all information stored in the central brewery database.  The user will be able to add, delete, and modify any records that are currently stored and saved on the database.  In addition, the information that'll be made available of any brewery prodcut will include the following:
@@ -43,9 +43,6 @@ Each of the inputs and outputs for the subsystem are defined here. Create a tabl
 \end{center}
 \end{table}
 
-\subsection{Subsystem 2}
-Repeat for each subsystem
-
-\subsection{Subsystem 3}
+\subsection{Private Database Connector}
 Repeat for each subsystem
 
