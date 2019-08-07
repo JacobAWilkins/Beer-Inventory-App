@@ -1,8 +1,6 @@
 The web application, which in this case is Layer X, is the overall web portal that will be used to manage all information for any brewery products.  The web application's sole purpose is to have administrative privileges and more control of the information that is stored in the brewery's database.  Unlike the mobile application, the web portal will allow the user to add, remove, and modify any records of any brewery product that is stored in the database.
 
 \subsection{Manage Inventory}
-This section should be a general description of a particular subsystem for the given layer. For most subsystems, an extract of the architectural block diagram with data flows is useful. This should consist of the subsystem being described and those subsystems with which it communicates.
-
 In the Manage Inventory subsystem of the web app layer, the subsystem will allow for information to be managed and stored into the brewery database.  The user will be allowed to add, delete, or modify any brewery records stored in the database by having administrative privileges for easy management of the information stored in the database.
 
 \begin{figure}[h!]
@@ -30,7 +28,6 @@ ID
 To further explain the format and location of the brewery, the user will be able to generate a two-dimensional figure to describe the location where the products are stored physically and set the location of the brewery product in the exact row and columns of the two-dimensional figure from the cabinet, closet, kegerator, etc.
 
 \subsubsection{Subsystem Interfaces}
-Each of the inputs and outputs for the subsystem are defined here. Create a table with an entry for each labelled interface that connects to this subsystem. For each entry, describe any incoming and outgoing data elements will pass through this interface.
 
 \begin {table}[H]
 \caption {Manage Inventory Interfaces} 
@@ -46,6 +43,12 @@ Each of the inputs and outputs for the subsystem are defined here. Create a tabl
 \subsection{Private Database Connector}
 In the Private Database Connector subsystem of the web app layer, the connector will allow a direct and secure connection to the central brewery database for information to be stored in the database layer and for information to be retrieved from the database.  The Private Database Connector will interface both with the Manage Inventory subsystem of the web portal and the central database layer.
 
+\begin{figure}[h!]
+	\centering
+ 	\includegraphics[width=0.60\textwidth]{images/private_db_connector_subsystem.png}
+ \caption{Example subsystem description diagram}
+\end{figure}
+
 \subsubsection{Assumptions}
 The Private Database Connector will establish an interface between the web portal and the central database.  The connector will make sure that information between the web portal and the central database is exchanged accordingly.  When the web portal requests for information on a particular brewery, the connector will make the request using MySQL queries to retrieve the information from the database.  In turn, the database will receive the MySQL query and will return the information to the connector and the connector will send the information to the web portal to display it to the user.
 
@@ -54,7 +57,6 @@ The connector's sole responsibility is to make sure that data flow between the w
 On the other hand, if the user decides to modify or delete a record from the database, the connector will send the request to the database and the database will delete or modify the record from the user's request.
 
 \subsubsection{Private Database Connector Interfaces}
-Each of the inputs and outputs for the subsystem are defined here. Create a table with an entry for each labelled interface that connects to this subsystem. For each entry, describe any incoming and outgoing data elements will pass through this interface.
 
 \begin {table}[H]
 \caption {Subsystem interfaces} 
