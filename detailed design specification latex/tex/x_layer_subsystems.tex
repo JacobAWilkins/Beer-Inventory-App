@@ -1,16 +1,16 @@
 In this section, the layer is described in terms of the hardware and software design. Specific implementation details, such as hardware components, programming languages, software dependencies, operating systems, etc. should be discussed. Any unnecessary items can be ommitted (for example, a pure software module without any specific hardware should not include a hardware subsection). The organization, titles, and content of the sections below can be modified as necessary for the project.
 
-\subsection{Layer Hardware}
-A description of any involved hardware components for the layer. For example, if each subsystem is a software process running on an embedded computer, discuss the specifics of that device here. Do not list a hardware component that only exists at the subsystem level (include it in the following sections).
+\subsection{Web Layer Hardware}
+Swift Scan app will no longer use a Web Layer to pull and store brewery information records.  The Swift Scan app will pull and store information from an internal text file that'll be created once the user decides to manually add a brewery record or search for a specific brewery product.
 
-\subsection{Layer Operating System}
-A description of any operating systems required by the layer.
+\subsection{Web Layer Operating System}
+Swift Scan will execute on Android OS smartphones.
 
-\subsection{Layer Software Dependencies}
-A description of any software dependencies (libraries, frameworks, etc) required by the layer.
+\subsection{Web Layer Software Dependencies}
+Swift Scan will use numerous libraries from the Android API and also several from the Java SDK.  Due to the features that the GUI will provide, the Android API libraries will help accomplish this task and most of the back-end development will be accomplished with libraries from the Java SDK.
 
 \subsection{Subsystem 1}
-Descibe at a high level the purpose and basic design of this subsystem. Is it a piece of hardware, a class, a web service, or something else? Note that each of the subsystem items below are meant to be specific to that subystem and not a repeat of anything discussed above for the overall layer.
+The Web Layer was supposed to be used as a means for higher access to the data for the brewery products, but now the Web Layer is treated as an internal file that the app will create and store in the internal storage of an Android smartphone.  There will be separate classes within the functionality of the app that'll open the file for adding and/or modifiying records and also to retrieve any information that pertains to a specific brewery.  Therefore, an internal file stored in the Android OS will be more of the Web Layer.
 
 \begin{figure}[h!]
 	\centering
@@ -19,13 +19,13 @@ Descibe at a high level the purpose and basic design of this subsystem. Is it a 
 \end{figure}
 
 \subsubsection{Subsystem Hardware}
-A description of any involved hardware components for the subsystem.
+The Web Layer will not consist of any hardware components for functionality purposes.
 
 \subsubsection{Subsystem Operating System}
-A description of any operating systems required by the subsystem.
+The main operating system (OS) for the overall app is Android OS.
 
 \subsubsection{Subsystem Software Dependencies}
-A description of any software dependencies (libraries, frameworks, design software for mechanical parts or circuits, etc) required by the subsystem.
+Any of the class files for Swift Scan will use Android's API along with Java SDK libraries for development of the GUI and back-end development of the functionality of the app, respectively.
 
 \subsubsection{Subsystem Programming Languages}
 A description of any programming languages used by the subsystem.
