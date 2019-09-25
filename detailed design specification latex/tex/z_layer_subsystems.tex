@@ -1,39 +1,34 @@
-In this section, the layer is described in terms of the hardware and software design. Specific implementation details, such as hardware components, programming languages, software dependencies, operating systems, etc. should be discussed. Any unnecessary items can be ommitted (for example, a pure software module without any specific hardware should not include a hardware subsection). The organization, titles, and content of the sections below can be modified as necessary for the project.
-
 \subsection{Layer Hardware}
-A description of any involved hardware components for the layer. For example, if each subsystem is a software process running on an embedded computer, discuss the specifics of that device here. Do not list a hardware component that only exists at the subsystem level (include it in the following sections).
+Swift Scan app will no longer use a Web Layer to pull and store brewery information records.  The Swift Scan app will pull and store information from an internal text file that'll be created once the user decides to manually add a brewery record or search for a specific brewery product.
 
 \subsection{Layer Operating System}
-A description of any operating systems required by the layer.
+Swift Scan will execute on Android OS smartphones.
 
 \subsection{Layer Software Dependencies}
-A description of any software dependencies (libraries, frameworks, etc) required by the layer.
+Swift Scan will use numerous libraries from the Android API and also several from the Java SDK.  Due to the features that the GUI will provide, the Android API libraries will help accomplish this task and most of the back-end development will be accomplished with libraries from the Java SDK.
 
 \subsection{Subsystem 1}
-Descibe at a high level the purpose and basic design of this subsystem. Is it a piece of hardware, a class, a web service, or something else? Note that each of the subsystem items below are meant to be specific to that subystem and not a repeat of anything discussed above for the overall layer.
-
+The Smart scan app will access the database via database connector and will be able to request the required information or make changes.
+The databse will send the requested output as required or will allow the user to input new data for the brewery product.
 \begin{figure}[h!]
 	\centering
- 	\includegraphics[width=0.60\textwidth]{images/subsystem}
+ 	\includegraphics[width=0.60\textwidth]{images/zlayer}
  \caption{Example subsystem description diagram}
 \end{figure}
 
 \subsubsection{Subsystem Hardware}
-A description of any involved hardware components for the subsystem.
-
+Smart scan will use the devise storage.
 \subsubsection{Subsystem Operating System}
 A description of any operating systems required by the subsystem.
 
 \subsubsection{Subsystem Software Dependencies}
-A description of any software dependencies (libraries, frameworks, design software for mechanical parts or circuits, etc) required by the subsystem.
+Any of the class files for Swift Scan will use Android's API along with Java SDK libraries for development of the GUI and back-end development of the functionality of the app, respectively.
 
 \subsubsection{Subsystem Programming Languages}
-A description of any programming languages used by the subsystem.
+The main programming language used for the Swift Scan app is Java and using Android's API for the GUI development.
 
 \subsubsection{Subsystem Data Structures}
-A description of any classes or other data structures that are worth discussing for the subsystem. For example, data being transmitted from a microcontroller to a PC via USB should be first be assembled into packets. What is the structure of the packets?
+ASwift Scan will contain two classes to write data to the internal text file and the second class will be used to retrieve the data and display the data to the user.  The second class where the data will be retrieved from the text file will have a method to sort the data as well so it can be displayed to the user.  In addition, the second class will also contain a method for updating any records within the text file, depending on what the user decides to update.
 
 \subsubsection{Subsystem Data Processing}
-A description of any algorithms or processing strategies that are worth discussing for the subsystem. If you are implementing a well-known algorithm, list it. If it is something unique to this project, discuss it in greater detail.
-
-
+rder for the brewery data to be recorded in the text file, the user will need to scan first the barcode of the product.  The app will attempt to search for the brewery record in the internal text file and there will be a class that'll perform a linear search through the text file to see if the barcode string exists in the text file.  In case the barcode string does not exist within the text file, the user will be prompted to enter the brewery information into the app and a Java class file will write the data to the text file.  On the other hand, if the barcode string does exist in the text file, a Java class file will use the linear search algorithm to find the record within the text file and return the brewery product information to the user.  All of the data processing for the Swift Scan app will be done with Java class files and the Android API will display the data to the user through the GUI.
