@@ -1,39 +1,53 @@
 In this section, the layer is described in terms of the hardware and software design. Specific implementation details, such as hardware components, programming languages, software dependencies, operating systems, etc. should be discussed. Any unnecessary items can be ommitted (for example, a pure software module without any specific hardware should not include a hardware subsection). The organization, titles, and content of the sections below can be modified as necessary for the project.
+   Layer Y is mobile application layer. This layer includes mobile app featuring barcode scanner, and internal and private database to keep track of inventory of product. The hardware component in this layer is android phone. We need android phone featuring camera on both sides to scan and read the beer. Generally, we are making our android app in android studio, and we are u. sing java as programming language. The app consists of user interface, internal database zxing library to read the barcode and procced to look into created when app is launched for the first time.
 
 \subsection{Layer Hardware}
-A description of any involved hardware components for the layer. For example, if each subsystem is a software process running on an embedded computer, discuss the specifics of that device here. Do not list a hardware component that only exists at the subsystem level (include it in the following sections).
+Our beer inventory app is mainly focused software rather than hardware. It consists of mobile app featuring barcode scanner connected with internal database to keep track of inventory product. In this layer hardware component is android phone. As to scan the beer and keep track of beer on the basis of their location, type, style and name. All of the codes and programs running in the app act as software.
 
 \subsection{Layer Operating System}
-A description of any operating systems required by the layer.
+The operating system required by layer is user interface and android os. In this layer, User interact with the mobile app features, its content and function. Similarly, in this user interact with app to scan the item with barcode   placed on the basis of name, type, style and location. 
 
 \subsection{Layer Software Dependencies}
-A description of any software dependencies (libraries, frameworks, etc) required by the layer.
+Our app is software based. We are using android studio for making beer app. The programming language we are using is java. Library used in mobile app is zxing library.
 
 \subsection{Subsystem 1}
-Descibe at a high level the purpose and basic design of this subsystem. Is it a piece of hardware, a class, a web service, or something else? Note that each of the subsystem items below are meant to be specific to that subystem and not a repeat of anything discussed above for the overall layer.
-
-\begin{figure}[h!]
-	\centering
- 	\includegraphics[width=0.60\textwidth]{images/subsystem}
- \caption{Example subsystem description diagram}
-\end{figure}
+The subsystem of mobile app layer is barcode scanner. This subsystem scans the barcode number and get the product information like type, price, style and date from the database with respective private and public connectors. Barcode reader is connected with public database connector through barcode number. It performs to get the information of beer based on its types, origin, price, style and date. It extracts the information by its barcode number available in database.
 
 \subsubsection{Subsystem Hardware}
-A description of any involved hardware components for the subsystem.
+There is no hardware used in this sub system. There is barcode reader that acts with brewing product to get brewing number and all the information.
 
 \subsubsection{Subsystem Operating System}
-A description of any operating systems required by the subsystem.
+The operating system act on this subsystem is user interface. User interact with app to scan the item with barcode   placed on the basis of name, type, style and location.
 
 \subsubsection{Subsystem Software Dependencies}
-A description of any software dependencies (libraries, frameworks, design software for mechanical parts or circuits, etc) required by the subsystem.
+There are many libraries used while making the android app. Library used in mobile app is zxing library.
 
 \subsubsection{Subsystem Programming Languages}
-A description of any programming languages used by the subsystem.
+We are using android studio for making beer app. The programming language used in this subsystem is java.
 
 \subsubsection{Subsystem Data Structures}
-A description of any classes or other data structures that are worth discussing for the subsystem. For example, data being transmitted from a microcontroller to a PC via USB should be first be assembled into packets. What is the structure of the packets?
+In this subsystem, when barcode reader scans the beer items; the information/data of beer is stored in internal database. 
 
 \subsubsection{Subsystem Data Processing}
-A description of any algorithms or processing strategies that are worth discussing for the subsystem. If you are implementing a well-known algorithm, list it. If it is something unique to this project, discuss it in greater detail.
+In this subsystem, the algorithm used are insertion, counting sort and search algorithm. When barcode scan the beer, it helps to find the quantity ,  and search om the basis of type , style and name.
+\subsection{Subsystem 2}
+Another subsystem of mobile app is private database connectors. The app scans a bar-code and proceeds to look for the number in the internal database, if the product has already been registered then the app will present the available information to the user but in case that the product is not found in the database the app will allow the user to add the product to the inventory. In this subsystem, the manually added information is stored in the app database internally. All information is stored in private database as we are adding all the information manually
 
+\subsubsection{Subsystem Hardware}
+Our app mainly focused on software. There is no hardware used in this subsystem. However, there is internal database storage when the items are added manually in the beer app. 
+
+\subsubsection{Subsystem Operating System}
+The operating system act on this layer is memory management or storage
+
+\subsubsection{Subsystem Software Dependencies}
+There are many libraries used while making the android app. Library used in mobile app is zxing library.
+
+\subsubsection{Subsystem Programming Languages}
+We are using android studio for making beer app. The programming language used in this subsystem is java.We are using local database(sQlite) to add beer manually and to store the information.
+
+\subsubsection{Subsystem Data Structures}
+In this subsystem, all the information and data are stored in local database. They are added manually in the app and after adding it stored internally in app database.
+
+\subsubsection{Subsystem Data Processing}
+In this subsystem, the algorithm used are search algorithm. It helps to search the information from the database. It also used insertion algorithm ; adding information manually.
 
